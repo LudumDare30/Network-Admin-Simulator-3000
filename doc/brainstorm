@@ -1,0 +1,80 @@
+http://piratepad.net/ffvGFFlcug
+
+NetworkAdmin Simulator 3000 
+
+https://github.com/LudumDare30/Network-Admin-Simulator-3000
+
+Game mechanics:
+Player manages network connections in a country
+Player would reroute connections if some cables are down so all computers in the country are always connected
+Player must respond to complaints and support tickets
+  Limited resources:
+money
+websites
+reputation (points)
+personel?
+
+
+Player starts with $X resources for $Y connections
+    Player must establish first outside connection
+        agreements are bargins between resources and available assets
+    Limited resources means limited connections, players eventually sacrifice one deal for others
+        Either party is capable of terminating the connection as long as:
+            the terms of the agreement are being met or
+            the parties have the resources/assets necessary to uphold the agreement
+
+
+Score = Number of websites we have access toy
+    upholding agreements are a bonus
+    having a connection on a violated agreement is still points, but less points
+
+
+
+
+
+Things -Gamah has to install...
+ a browser
+git
+
+
+//steps
+start the game what do we see ?
+    + world map
+        select which country you want to be.
+    + resources on one of top corners
+        - resources are:
+            * money
+            * ammount of possible connections
+            * number of data-centers in the region (by overing the map)
+            * bandwidth
+    + shop
+        - hardware
+        - promotion packs for customers ( increases popularity )
+    + websites which we have to make connections to ( aka goals )
+    + country name list the other corner for quick access for negotiations
+    
+negotiations menu:
+    + sender side:
+        - slider for money offer
+    + receiving side:
+        - accept
+        - reject
+        - consider ( the sender receives a notification and may propose again )
+
+--- game mechanics
+ranks and points:
+
++ shop:
+    - hardware:
+        * router ( gives more connections [ tier 1, tier 2, tier 3, tier 4 ]
+            ( tier 1 gives more 2 connections but reduces quality over all connections )
+            ( tier 2 gives more 1 connection and doesn't reduce quality over all connections )
+            ( tier 3 gives more 2 connections and doesn't alter quality over connections )
+            ( tier 4 gives more 1 connection and increases bandwidth )
+        * upgrade network ( increases bandwidth [ copper, gold, fiber ] ) 
+            ( copper )
+            ( hardened copper )
+            ( gold )
+            ( hardened gold )
+            ( fiber )
+
