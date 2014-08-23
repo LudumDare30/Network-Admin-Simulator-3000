@@ -1,0 +1,23 @@
+{
+  "random-events": [
+    {
+      "event-text": "negotiate connection with",
+      "options": [
+        "accept",
+        "reject",
+        "consider"
+      ]
+    },
+    {
+      "event-text": "PriPrieTaryGarbage Inc. from $country has declared cyberwarefare! They are hitting us with $percentofbandwidth and demanding $percentofmoney to stop",
+      "options": [
+        "research security (attack slowly dwindles)",
+        "pay ransom"
+      ]
+    },
+    {
+      "event-text": "",
+      "options": []
+    }
+  ]
+}
