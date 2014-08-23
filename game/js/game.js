@@ -59,13 +59,18 @@ $(document).ready(function(){
         });
 
         map.container.click(function(e){
-            map.addMarker(markerIndex, {coords: [100, 100 ] });
-            var latLng = map.pointToLatLng(e.offsetX, e.offsetY),
-                targetCls = $(e.target).attr('class');
-            
+            var latLng,
+            targetCls = $(e.target).attr('class');  
+            if (e.offsetX === undefined) {
+                latLng = map.pointToLatLng(e.pageX-$("#worldMap").offset().left, e.pageY-$("#worldMap").offset().top);
+            } else {
+                latLng = map.pointToLatLng(e.offsetX, e.offsetY);
+            }
+            console.log(latLng.lat + " " + latLng.lng);
             if (latLng && (!targetCls || (targetCls && $(e.target).attr('class').indexOf('jvectormap-marker') === -1))) {
                 markersCoords[markerIndex] = latLng;
                 map.addMarker(markerIndex, {latLng: [latLng.lat, latLng.lng]});
+                
                 markerIndex += 1;
             }
         });
