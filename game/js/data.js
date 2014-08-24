@@ -227,19 +227,8 @@ function gameCountryResourcesText(code) {
     console.log(gameCountryResources[code].resources.bandwidth.current);
     console.log(gameCountryResources[code].resources.bandwidth.max);
     console.log(gameCountryResources[code].resources.bandwidth.unit);
-    var string = "money #0 connections {copper: #1, copperIsulated: #2, gold: #3, goldIsulated: #4, fiber #5 } bandwidth #6/#7 #8 ";
 
-    string.replace("#0",gameCountryResources[code].resources.money);
-    string.replace("#1",gameCountryResources[code].resources.connections.copper);
-    string.replace("#2",gameCountryResources[code].resources.connections.copperInsulated);
-    string.replace("#3",gameCountryResources[code].resources.connections.gold);
-    string.replace("#4",gameCountryResources[code].resources.connections.goldInsulated);
-    string.replace("#5",gameCountryResources[code].resources.fiber);
-    string.replace("#6",gameCountryResources[code].resources.bandwidth.current);
-    string.replace("#7",gameCountryResources[code].resources.bandwidth.max);
-    string.replace("#8",gameCountryResources[code].resources.bandwidth.unit);
-
-    var string = "money "+gcrcr.money+", connections {copper: "+gcrcr.connections.copper+", copperInsulated: "+gcrcr.connections.copperInsulated+", gold: "+gcrcr.connections.gold+", goldInsulated: 5, fiber #5 } bandwidth #6/#7 #8 ";
+    var string = "money "+gcrcr.money+", connections {copper: "+gcrcr.connections.copper+", copperInsulated: "+gcrcr.connections.copperInsulated+", gold: "+gcrcr.connections.gold+", goldInsulated: "+gcrcr.connections.goldInsulated+", fiber "+gcrcr.connections.fiber+" } bandwidth: "+gcrcr.bandwidth.current+"/"+gcrcr.bandwidth.max+gcrcr.bandwith.unit;
     return string;
     
 }
