@@ -49,7 +49,8 @@ $(document).ready(function(){
             },
             container: $("#worldMap"),
             onMarkerLabelShow: function(e, label, code) {
-                map.label.text(markersCoords[code].lat.toFixed(2) + ", " + markersCoords[code].lng.toFixed(2));
+//                map.label.text(markersCoords[code].lat.toFixed(2) + ", " + markersCoords[code].lng.toFixed(2));
+		map.label.text(gameCountryResources[code]);
             },
             onMarkerClick: function(e, code){
                 map.removeMarkers([code]);
