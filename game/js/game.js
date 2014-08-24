@@ -34,7 +34,24 @@ function drawNodes() {
 
 $(document).ready(function(){
     $(function(){
-       // $("#worldMap").vectorMap({backgroundColor: "#1D8CB9"});
+	// $("#worldMap").vectorMap({backgroundColor: "#1D8CB9"});
+	/*
+	 this method should be used to import files once is uploaded to a server
+	 $.getScript("js/data.js", function() { 
+	 console.log("data.js loaded successfully");
+	 });
+	 */
+	/* load locally */
+/*
+	var dataJSsrc = document.createElement('script'),
+	    head = document.head || document.getElementsByTagName('head')[0];
+	dataJSsrc.src = 'js/data.js';
+	dataJSsrc.async = false;
+	head.insertBefore(dataJSsrc, head.firstChild);
+*/
+	/* from data.js */
+	initCountryResources()
+	/* end data.js management */
         var map,
             markerIndex = 0,
             markersCoords = {};
@@ -50,7 +67,7 @@ $(document).ready(function(){
             container: $("#worldMap"),
             onMarkerLabelShow: function(e, label, code) {
 //                map.label.text(markersCoords[code].lat.toFixed(2) + ", " + markersCoords[code].lng.toFixed(2));
-		map.label.text(gameCountryResources[code]);
+		map.label.text(gameCountryResourcesText(code));
             },
             onMarkerClick: function(e, code){
                 map.removeMarkers([code]);

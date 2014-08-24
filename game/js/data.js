@@ -192,9 +192,9 @@ var defaultCountryResources = {
   "money":0,
   "connections": {
     "copper": 0,
-    "copperInsolated":0,
+    "copperInsulated":0,
     "gold":0,
-    "goldInsolated":0,
+    "goldInsulated":0,
     "fiber":0,
     "total":0
   },
@@ -207,8 +207,37 @@ var defaultCountryResources = {
 };
 
 var gameCountryResources = new Array();
-var initCountryResources = function() {
+
+function initCountryResources() {
     for( code in gameCountryCodes ) {
-	gameCountryResources.push({"code":code, defaultCountryResources,});
+	gameCountryResources.push({"code":code, "resources":defaultCountryResources});
     }
-};
+}
+
+function gameCountryResourcesText(code) {
+    console.log(gameCountryResources[code].resources.money);
+    console.log(gameCountryResources[code].resources.connections.copper);
+    console.log(gameCountryResources[code].resources.connections.copperInsulated);
+    console.log(gameCountryResources[code].resources.connections.gold);
+    console.log(gameCountryResources[code].resources.connections.goldInsulated);
+    console.log(gameCountryResources[code].resources.fiber);
+    console.log(gameCountryResources[code].resources.total);
+    console.log(gameCountryResources[code].resources.datacenters);
+    console.log(gameCountryResources[code].resources.bandwidth.current);
+    console.log(gameCountryResources[code].resources.bandwidth.max);
+    console.log(gameCountryResources[code].resources.bandwidth.unit);
+    var string = "money #0 connections {copper: #1, copperIsulated: #2, gold: #3, goldIsulated: #4, fiber #5 } bandwidth #6/#7 #8 ";
+
+    string.replace("#0",gameCountryResources[code].resources.money);
+    string.replace("#1",gameCountryResources[code].resources.connections.copper);
+    string.replace("#2",gameCountryResources[code].resources.connections.copperInsulated);
+    string.replace("#3",gameCountryResources[code].resources.connections.gold);
+    string.replace("#4",gameCountryResources[code].resources.connections.goldInsulated);
+    string.replace("#5",gameCountryResources[code].resources.fiber);
+    string.replace("#6",gameCountryResources[code].resources.bandwidth.current);
+    string.replace("#7",gameCountryResources[code].resources.bandwidth.max);
+    string.replace("#8",gameCountryResources[code].resources.bandwidth.unit);
+
+    return string;
+    
+}
