@@ -215,6 +215,7 @@ function initCountryResources() {
 }
 
 function gameCountryResourcesText(code) {
+    gcrcr = gameCountryResources[code].resources;
     console.log(gameCountryResources[code].resources.money);
     console.log(gameCountryResources[code].resources.connections.copper);
     console.log(gameCountryResources[code].resources.connections.copperInsulated);
@@ -238,6 +239,7 @@ function gameCountryResourcesText(code) {
     string.replace("#7",gameCountryResources[code].resources.bandwidth.max);
     string.replace("#8",gameCountryResources[code].resources.bandwidth.unit);
 
+    var string = "money "+gcrcr.money+", connections {copper: "+gcrcr.connections.copper+", copperInsulated: "+gcrcr.connections.copperInsulated+", gold: "+gcrcr.connections.gold+", goldInsulated: 5, fiber #5 } bandwidth #6/#7 #8 ";
     return string;
     
 }
